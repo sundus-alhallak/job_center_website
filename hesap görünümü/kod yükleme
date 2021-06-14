@@ -1,3 +1,4 @@
+#4 kod yükleme
 @{
     ViewBag.Title = "gönder";
 }

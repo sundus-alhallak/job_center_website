@@ -1,3 +1,4 @@
+#31 
 result.width -= horizScrollbar;
       result.height -= vertScrollbar;
     }

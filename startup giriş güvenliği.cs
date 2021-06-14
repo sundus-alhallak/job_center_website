@@ -1,4 +1,4 @@
-#6 startup giriş güvenliği 
+#13 startup giriş güvenliği 
 using System;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;

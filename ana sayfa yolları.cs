@@ -1,4 +1,4 @@
-#7 ana sayfa yolları
+#23 ana sayfa yolları
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,4 @@
-#8 kişisel bigileri depoleme ve şifre yenileme alternatifi (IdentityConfig)
+#16 kişisel bigileri depoleme ve şifre yenileme alternatifi (IdentityConfig)
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

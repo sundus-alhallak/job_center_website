@@ -1,0 +1,58 @@
+#33 delete+ edit
+@model JobSearch.Models.Jobs
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MainPage.cshtml";
+}
+
+<h2 class="text-center mt-md-3 jumbotron p-md-5"><u>ilanı sil</u></h2>
+
+
+<div class="col-md-8 container">
+    <hr />
+    <hr />
+    <dl class="dl-horizontal text-right">
+        <dt>
+            @Html.DisplayNameFor(model => model.categories.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categories.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDiscription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDiscription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobImage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <input type="submit" value="sil" class="btn btn-danger" />
+            @Html.ActionLink("sil", "Index", null, new { @class="btn btn-secondary"})
+        </div>
+    }
+</div>

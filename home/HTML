@@ -1,0 +1,55 @@
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+@model IEnumerable<JobSearch.Models.Categories>
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_MainPage.cshtml";
+}
+
+<div class="jumbotron p-3 mt-3">
+    <h1 class="text-right">ana sayfa</h1>
+    <p class="lead text-right">merhabalar yeni işin ara </p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">daha fazla &raquo;</a></p>
+</div>
+
+<div>
+    @foreach (var item in Model)
+    {
+        <h3 class="text-right"><u>@Html.DisplayFor(x => item.Name)</u></h3>
+        <h6 class="text-right">@Html.DisplayFor(x => item.Discription)</h6>
+        <div class="row border-bottom mb-5">
+            @foreach (var subitem in item.jobs)
+            {
+                <div class="col-md-2 m-2 img-thumbnail">
+                    <img src="~/Upload/@subitem.JobImage" class="img-thumbnail" 
+                         style="height:150px;"/>
+                    <h6 class="text-right">@Html.DisplayFor(x => subitem.JobName)</h6>
+                    <a class="btn btn-info btn-sm" href="~/Jobs/Details/@subitem.Id"> daha fazla</a>
+                </div>
+            }
+        </div>
+    }
+</div>

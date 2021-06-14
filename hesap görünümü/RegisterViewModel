@@ -1,3 +1,4 @@
+#1 RegisterViewModel
 @{
     ViewBag.Title = "sing-up girişi";
     Layout = "~/Views/Shared/_MainPage.cshtml";

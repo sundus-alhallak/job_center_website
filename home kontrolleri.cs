@@ -1,4 +1,4 @@
-#10 home kontrolleri
+#19 home kontrolleri
 using JobSearch.Models;
 using System;
 using System.Collections.Generic;

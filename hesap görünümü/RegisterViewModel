@@ -1,0 +1,38 @@
+@{
+    ViewBag.Title = "sing-up girişi";
+    Layout = "~/Views/Shared/_MainPage.cshtml";
+}
+
+<div class="row mt-5">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post,
+        new { @class = "form-group col-md-4 container text-right border rounded-lg p-3 shadow", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <h3 class="text-center"><u>bilgiler</u></h3>
+        <div class="form-group">
+            @Html.LabelFor(m => m.USerName)
+            @Html.TextBoxFor(m => m.USerName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.RoleUser)
+            @Html.DropDownList("RoleUser", (SelectList)ViewBag.MyRoles, new { @class="form-control"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword)
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="kayıd ol" />
+        </div>
+    }
+</div>

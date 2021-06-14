@@ -1,0 +1,44 @@
+@model IEnumerable<JobSearch.Models.Categories>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainPage.cshtml";
+}
+
+<h3 class="text-right mt-md-4"><iş türü></u></h3>
+
+<a class="btn btn-outline-secondary " href="@Url.Action("Create")">
+    <i class="fas fa-building"></i> yeni grup oluştur
+</a>
+@*<p class="text-right mt-3 btn btn-outline-secondary">
+    @Html.ActionLink("yeni grup oluştur", "Create")
+</p>*@
+<hr />
+<table class="table table-striped table-hover table-bordered table-sm text-center">
+    <tr class="bg-secondary" style="color:white; font-weight:bolder;">
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discription)
+        </td>
+        <td>
+            @Html.ActionLink("edit", "Edit", new { id=item.Id }, new { @class="btn btn-success btn-sm"}) 
+            @Html.ActionLink("detaylar", "Details", new { id=item.Id }, new { @class = "btn btn-info btn-sm" }) 
+            @Html.ActionLink("sil", "Delete", new { id=item.Id }, new { @class = "btn btn-danger btn-sm" })
+        </td>
+    </tr>
+}
+
+</table>

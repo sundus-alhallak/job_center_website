@@ -1,4 +1,4 @@
-#12 iş fırsatları kontrolu
+//#12 iş fırsatları kontrolu
 using System;
 using System.Collections.Generic;
 using System.Data;

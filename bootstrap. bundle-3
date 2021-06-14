@@ -1,4 +1,4 @@
-  // init state
+#32
       this.state = {
         isDestroyed: false,
         isCreated: false,
@@ -26,10 +26,7 @@
         return a.order - b.order;
       });
 
-      // modifiers have the ability to execute arbitrary code when Popper.js get inited
-      // such code is executed in the same order of its modifier
-      // they could add new properties to their options configuration
-      // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
+     
       this.modifiers.forEach(function (modifierOptions) {
         if (modifierOptions.enabled && isFunction(modifierOptions.onLoad)) {
           modifierOptions.onLoad(_this.reference, _this.popper, _this.options, modifierOptions, _this.state);
@@ -47,9 +44,6 @@
 
       this.state.eventsEnabled = eventsEnabled;
     }
-
-    // We can't use class properties because they don't get listed in the
-    // class prototype and break stuff like Sinon stubs
 
 
     createClass(Popper, [{
@@ -80,46 +74,11 @@
        */
 
 
-      /**
-       * Collection of utilities useful when writing custom modifiers.
-       * Starting from version 1.7, this method is available only if you
-       * include `popper-utils.js` before `popper.js`.
-       *
-       * **DEPRECATION**: This way to access PopperUtils is deprecated
-       * and will be removed in v2! Use the PopperUtils module directly instead.
-       * Due to the high instability of the methods contained in Utils, we can't
-       * guarantee them to follow semver. Use them at your own risk!
-       * @static
-       * @private
-       * @type {Object}
-       * @deprecated since version 1.8
-       * @member Utils
-       * @memberof Popper
-       */
+      
 
     }]);
     return Popper;
   }();
-
-  /**
-   * The `referenceObject` is an object that provides an interface compatible with Popper.js
-   * and lets you use it as replacement of a real DOM node.<br />
-   * You can use this method to position a popper relatively to a set of coordinates
-   * in case you don't have a DOM node to use as reference.
-   *
-   * ```
-   * new Popper(referenceObject, popperNode);
-   * ```
-   *
-   * NB: This feature isn't supported in Internet Explorer 10.
-   * @name referenceObject
-   * @property {Function} data.getBoundingClientRect
-   * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
-   * @property {number} data.clientWidth
-   * An ES6 getter that will return the width of the virtual reference element.
-   * @property {number} data.clientHeight
-   * An ES6 getter that will return the height of the virtual reference element.
-   */
 
 
   Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
@@ -254,10 +213,8 @@
 
 
       if (!this._inNavbar && usePopper) {
-        /**
-         * Check for Popper dependency
-         * Popper - https://popper.js.org
-         */
+    
+         
         if (typeof Popper === 'undefined') {
           throw new TypeError('Bootstrap\'s dropdowns require Popper.js (https://popper.js.org/)');
         }
@@ -282,10 +239,7 @@
         }
 
         this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
-      } // If this is a touch-enabled device we add extra
-      // empty mouseover listeners to the body's immediate children;
-      // only needed because of broken event delegation on iOS
-      // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+      } 
 
 
       if ('ontouchstart' in document.documentElement && $(parent).closest(SELECTOR_NAVBAR_NAV).length === 0) {
